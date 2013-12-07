@@ -1,4 +1,4 @@
-$def with (list_active_subs, form)
+$def with (listActiveSubs, form)
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -27,7 +27,7 @@ $def with (list_active_subs, form)
 
 <h2>Active Subscribers</h2>
 <table>
-$for user in list_active_subs
+$for user in listActiveSubs
     <tr id="$user.EmailAddress">
         <td>$user.Name</td>
         <td>$user.EmailAddress</td>

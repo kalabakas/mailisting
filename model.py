@@ -10,10 +10,10 @@ def listActiveSubscribers():
 
 def newSub(name, email):
     subObj = Subscriber(auth, listId)
-    subObj.add(list_id, email, name, '', False, True)
+    subObj.add(listId, email, name, '', False, True)
     return "{'email':"+email+"}"
 
 def delSub(email):
-    subObj = Subscriber(auth, list_id, email)
+    subObj = Subscriber(auth, listId, email)
     subObj.delete()
     return "{'email':"+email+"}"

@@ -22,7 +22,7 @@ class Index:
     def GET(self):
         listActiveSubs = model.listActiveSubscribers()
         form = self.form()
-        return render.index(list_active_subs,form)
+        return render.index(listActiveSubs,form)
 
     def POST(self):
         """ Add new entry """
