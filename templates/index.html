@@ -1,0 +1,45 @@
+$def with (list_active_subs, form)
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+    jQuery(".ajaxdel").click(function() {
+        var tr = $$(this).closest('tr');
+        var input_string = tr.attr('id');
+        tr.css("background-color","#FF3700");
+        jQuery.ajax({
+            url: "/del",
+            type: "GET",
+            data: {email : input_string},
+            success: function() {
+                    tr.css("background-color","#FF3700");
+                    tr.fadeOut(400, function(){
+                        tr.remove();
+                    });
+                    return true;
+                },
+            });
+        return false;
+        });
+    });
+
+</script>
+
+<h2>Active Subscribers</h2>
+<table>
+$for user in list_active_subs
+    <tr id="$user.EmailAddress">
+        <td>$user.Name</td>
+        <td>$user.EmailAddress</td>
+        <td>
+            <form action="/del" method="get">
+                <input class="ajaxdel" type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<div>New Subscriber</div>
+<form action="" method="post">
+$:form.render()
+</form>
