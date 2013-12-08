@@ -22,7 +22,7 @@ and set you API_KEY and the LIST_ID. Check [here](http://help.campaignmonitor.co
 vim settings.py
 ```
 
-You are ready to run the app,
+You are ready to run the app, by default in port 8080 
 ```
 python controller.py
 ```
